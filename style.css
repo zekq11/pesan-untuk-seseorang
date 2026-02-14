@@ -1,0 +1,158 @@
+/* ===============================
+   RESET
+================================ */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:monospace;
+}
+
+/* ===============================
+   BACKGROUND UTAMA
+================================ */
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at top,#1a0026,#000 70%),
+url("img/background.jpg");
+background-size:cover;
+background-blend-mode:overlay;
+color:#00ffe5;
+overflow:hidden;
+}
+
+/* ===============================
+   BOX UTAMA
+================================ */
+.box{
+background:rgba(0,0,0,0.65);
+padding:40px;
+border-radius:25px;
+box-shadow:0 0 30px #00ffe5,
+0 0 60px #ff4da6 inset;
+text-align:center;
+animation:fade 1s ease;
+}
+
+/* ===============================
+   TEXT STYLE
+================================ */
+h1{
+margin-bottom:20px;
+color:#ff9ed6;
+text-shadow:0 0 15px #ff4da6;
+}
+
+p{
+margin-bottom:20px;
+color:#c7fff8;
+line-height:1.6;
+}
+
+/* ===============================
+   INPUT LOGIN
+================================ */
+input{
+display:block;
+margin:10px auto;
+padding:12px;
+width:220px;
+background:#000;
+border:1px solid #00ffe5;
+border-radius:12px;
+color:#00ffe5;
+outline:none;
+box-shadow:0 0 10px #00ffe5 inset;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+button{
+padding:12px 30px;
+margin:10px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+background:linear-gradient(45deg,#ff4da6,#00ffe5);
+color:black;
+font-weight:bold;
+letter-spacing:1px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 20px #ff4da6;
+}
+
+/* ===============================
+   ANIMASI FADE
+================================ */
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===============================
+   PARTICLE SPARKLE
+================================ */
+.sparkle{
+position:absolute;
+font-size:14px;
+opacity:0.7;
+animation:float 5s linear forwards;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-100vh);}
+}
+
+/* ===============================
+   SHAKE EFFECT
+================================ */
+@keyframes shake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-5px);}
+50%{transform:translateX(5px);}
+75%{transform:translateX(-5px);}
+100%{transform:translateX(0);}
+}
+
+/* ===============================
+   LOGIN SCREEN KHUSUS
+================================ */
+#boot{
+text-align:center;
+}
+
+#typing{
+margin-top:20px;
+color:#8afff3;
+min-height:40px;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media(max-width:600px){
+.box{
+width:90%;
+padding:25px;
+}
+
+h1{
+font-size:22px;
+}
+}

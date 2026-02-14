@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Secure System</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at top,#0f0c29,#000);
+font-family:monospace;
+color:#00ffe5;
+overflow:hidden;
+}
+
+/* boot screen */
+#boot{
+text-align:center;
+}
+
+#typing{
+margin-top:20px;
+color:#8afff3;
+min-height:40px;
+}
+
+/* login */
+#login{
+display:none;
+text-align:center;
+background:rgba(0,0,0,0.6);
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 30px #00ffe5;
+}
+
+input{
+display:block;
+margin:10px auto;
+padding:10px;
+width:200px;
+background:#000;
+color:#00ffe5;
+border:1px solid #00ffe5;
+border-radius:10px;
+}
+
+button{
+padding:10px 25px;
+margin-top:10px;
+background:#00ffe5;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="boot">
+<h1>Initializing Secure Terminal...</h1>
+<p id="typing"></p>
+<button onclick="showLogin()">ENTER</button>
+</div>
+
+<div id="login">
+<h2>Secure Login</h2>
+<input id="user" placeholder="username">
+<input id="pass" type="password" placeholder="password">
+<button onclick="login()">LOGIN</button>
+<p id="msg"></p>
+</div>
+
+<script>
+let text="Checking kernel... OK | Memory... OK | Stealth Mode Active...";
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+type();
+
+function showLogin(){
+document.getElementById("boot").style.display="none";
+document.getElementById("login").style.display="block";
+}
+
+let USER="Fitri";
+let PASS="sorrylate";
+
+function login(){
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+if(u===USER && p===PASS){
+window.location="isi.html";
+}else{
+document.getElementById("msg").innerHTML="Access Denied!";
+}
+}
+</script>
+
+</body>
+</html>
