@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Secure Message</title>
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at top,#1a0026,#000);
+font-family:monospace;
+color:#ffd6f0;
+text-align:center;
+overflow:hidden;
+}
+
+/* kotak */
+.box{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:20px;
+box-shadow:0 0 30px #ff4da6;
+display:none;
+}
+
+button{
+padding:10px 25px;
+margin:10px;
+background:#ff4da6;
+border:none;
+border-radius:20px;
+cursor:pointer;
+color:white;
+font-weight:bold;
+}
+
+h1{
+color:#ff99cc;
+}
+</style>
+</head>
+
+<body>
+
+<!-- layar 1 -->
+<div id="step1" class="box" style="display:block">
+<h1>Access Granted</h1>
+<p>Ada sesuatu yang ingin aku tunjukkan...</p>
+<button onclick="lanjut1()">Lanjut</button>
+</div>
+
+<!-- layar 2 -->
+<div id="step2" class="box">
+<h1>Kamu yakin mau lihat?</h1>
+<button onclick="lanjut2()">Iya</button>
+<button onclick="tidak()">Tidak</button>
+</div>
+
+<!-- layar 3 -->
+<div id="step3" class="box">
+<h1>Yakin banget?</h1>
+<p>Ini bukan pesan biasa...</p>
+<button onclick="romantis()">Aku yakin</button>
+<button onclick="tidak()">Tidak</button>
+</div>
+
+<!-- layar romantis -->
+<div id="romantis" class="box">
+<h1>💫 Pesan Spesial 💫</h1>
+<p>
+Pesan untukmu dari kry:<br><br>
+👋Halo ini aku kry, hari ini aku mau ngomong sesuatu.👉👈<br>
+kamu itu adalah orang sudah membantuku saat ini ya meskipun aku tidak bisa membalasnya.<br><br>
+jadi untuk membalasnya aku membuat ini untuk kamu dan aku mau mengucapkan selamat ulang tahun ya🥳, meskipun sudah lewat hehe😅. dan terimakasih sudah membantuku sampai sekarang, dan yah sekarangkan hari valentine aku cuma bisa mengucapkan happy valentine untuk kamu ya💐
+</p>
+
+<audio controls autoplay>
+<source src="romantic.mp3">
+</audio>
+</div>
+
+<!-- layar kalau tidak -->
+<div id="thanks" class="box">
+<h1>Terima kasih sudah membuka 😊</h1>
+</div>
+
+<script>
+function lanjut1(){
+document.getElementById("step1").style.display="none";
+document.getElementById("step2").style.display="block";
+}
+
+function lanjut2(){
+document.getElementById("step2").style.display="none";
+document.getElementById("step3").style.display="block";
+}
+
+function romantis(){
+document.getElementById("step3").style.display="none";
+document.getElementById("romantis").style.display="block";
+}
+
+function tidak(){
+document.getElementById("step1").style.display="none";
+document.getElementById("step2").style.display="none";
+document.getElementById("step3").style.display="none";
+document.getElementById("romantis").style.display="none";
+document.getElementById("thanks").style.display="block";
+}
+</script>
+
+</body>
+</html>
